@@ -71,7 +71,6 @@ const DashboardAdmin = () => {
                 fetchQosList()
             } else {
                 setShowErrorForbiddenModal(true)
-                //return navigate("/login")
             }
         } catch (err) {
             console.log("ERROR")
