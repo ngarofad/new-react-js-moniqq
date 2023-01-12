@@ -104,7 +104,7 @@ const CekQoS = () => {
         } else if (valJitter > 0 && valJitter <= 75) {
             setInfoJitter("Bagus");
             setBatasanJitter("0ms < x <= 75ms")
-        } else if (valJitter > 75 && valJitter <= 225) {
+        } else if (valJitter > 75 && valJitter <= 125) {
             setInfoJitter("Sedang");
             setBatasanJitter("75ms < x <= 225ms")
         } else if (valJitter > 125) {
@@ -130,18 +130,18 @@ const CekQoS = () => {
         e.preventDefault();
         let valPacketloss = packetloss
 
-        if (valPacketloss <= 0) {
+        if (valPacketloss >= 0 && valPacketloss <= 3) {
             setInfoPacketloss("Sangat Bagus");
             setBatasanPacketloss("0%")
-        } else if (valPacketloss > 0 && valPacketloss <= 3) {
+        } else if (valPacketloss > 3 && valPacketloss <= 15) {
             setInfoPacketloss("Bagus");
             setBatasanPacketloss("0% < x <= 3%")
-        } else if (valPacketloss > 3 && valPacketloss <= 15) {
+        } else if (valPacketloss > 15 && valPacketloss <= 25) {
             setInfoPacketloss("Sedang");
             setBatasanPacketloss("3% < x <= 15%")
-        } else if (valPacketloss > 15) {
+        } else if (valPacketloss > 25) {
             setInfoPacketloss("Buruk");
-            setBatasanPacketloss("> 15%")
+            setBatasanPacketloss("> 25%")
         }
         else {
             setInfoPacketloss("Tolong Masukkan Angka Hasil Pengukuran dengan benar");
